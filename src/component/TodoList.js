@@ -4,14 +4,16 @@ import List from "@material-ui/core/List"
 import Divider  from "@material-ui/core/Divider"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
-
+import TodoCom from "./TodoCom"
 function TodoList(props){
     const todoList = props.todos.map(todo =>{
        return <Paper>
             <List>
-                <ListItem>
-    <ListItemText>{todo.task}</ListItemText>
-            </ListItem>
+            <TodoCom  
+           task={todo.task} 
+           key={todo.key} 
+           completed={todo.completed}
+           /> 
             </List>
         </Paper>
         
